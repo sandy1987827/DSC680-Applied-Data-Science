@@ -1,0 +1,35 @@
+obdb_id:unique identification number.
+
+brewery_name:Brewery Name.
+
+brewery_type:Type of Brewery.
+
+street_name: Name of the Street.
+
+addressline_2: Address Line 2.
+
+addressline_3: Address Line 3.
+
+city_name: City Name.
+
+state_name: Street Name.
+
+county_province: Country.
+
+postal_code: Zip Code.
+
+website_url: brewery Website.
+
+phone: phone.
+
+created_at: Creation time.
+
+updated_at: Updated time.
+
+country:country name.
+
+longitude:longitude.
+
+latitude:latitude.
+
+tags:tags.
