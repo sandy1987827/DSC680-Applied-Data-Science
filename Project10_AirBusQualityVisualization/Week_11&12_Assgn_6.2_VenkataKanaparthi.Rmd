@@ -1,0 +1,97 @@
+---
+title: "Week_11&12_Assgn_6.2_VenkataKanaparthi"
+author: "Venkata Kanaparthi"
+date: "11/15/2021"
+output: pdf_document
+always_allow_html: true
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE, warning = FALSE, message = FALSE)
+```
+
+```{r include=TRUE}
+# Loading the required libraries
+library(akima)
+library(ggm)
+library(ggplot2)
+library(readxl)
+library(tidyverse)
+library(plyr)
+library(dplyr)
+library(reshape2)
+library(gapminder)
+library(Rcpp)
+library(plotly)
+library(treemap)
+library(scales)
+library(leaflet)
+```
+
+
+```{r include=TRUE}
+# Read csv input
+birthratedf <- read.csv("birth-rate.csv")
+crimedf <- read.csv("crimeratesbystate-formatted.csv")
+educationdf <- read.csv("education.csv")
+```
+
+```{r include=TRUE}
+# Histograms
+hist(crimedf$motor_vehicle_theft,
+     main="Motor Vehicle Thefts Counts by Amount",
+     xlab="Motor Vehicle Thefts Amounts",
+     ylab="Counts",
+     col="blue",
+     freq=TRUE)
+```     
+```{r include=TRUE}
+options(warn=-1)
+crimeSdf <- subset(crimedf, select = -c(state))
+meltData <- melt(crimeSdf)
+p <- ggplot(meltData, aes(factor(variable), value)) 
+p + geom_boxplot() + facet_wrap(~variable, scale="free")+ 
+        theme(axis.text.x=element_text(angle=0, hjust=0, vjust= 0.1)) +
+        theme(axis.text.y=element_text(hjust=0, vjust= 0.1)) +
+        ggtitle("US Crime Statistics") +
+        xlab("Statistic") + 
+        ylab("Instance Counts")
+```
+
+```{r include=TRUE}
+educdf <- educationdf[,c("state","math")]
+educdf <- educdf[!(educdf$state=='United States'),]
+educdf$mean <- 400
+educdf$target <- 800
+
+p <- ggplot(educdf, aes(math, state) )
+p <- ggplot(educdf, aes(state, math) )
+p <- p + geom_col(fill="grey", width=0.5)
+p <- p + geom_col(aes(state, mean), width=0.2)
+p <- p + geom_point(aes(state, target), colour="red")
+p <- p + geom_errorbar(aes(y = target,x = state, ymin = target,ymax
+                           = target), width = .45)
+p <- p + coord_flip()+ 
+        theme(axis.text.x=element_text(angle=0, hjust=0, vjust= 0.1)) +
+        theme(axis.text.y=element_text(hjust=0, vjust= 0.1)) +
+        ggtitle("PSAT Math Scores By State") +
+        xlab("Math Scores") + 
+        ylab("States")
+p
+```
+
+```{r include=TRUE}
+# Bubble Chart
+ggplot(crimedf, aes(x=state, y=motor_vehicle_theft, size = motor_vehicle_theft)) +
+  theme(axis.text.x = element_text(angle = 90,hjust=0.95,vjust=0.2)) +
+  theme(
+    plot.title = element_text(color="orange", size=12, face="bold"),
+    axis.title.x = element_text(color="orange", size=12, face="bold"),
+    axis.title.y = element_text(color="orange", size=12, face="bold")
+  ) +
+  theme(plot.title = element_text(hjust = 0.5)) +
+  ggtitle("Mortor Vehicle Theft Rate by State") +
+  xlab("State") + 
+  ylab("Mortor Vehicle Theft Rate") +
+  geom_point(alpha=0.7)
+```
