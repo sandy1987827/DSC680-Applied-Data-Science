@@ -1,1 +1,8 @@
+#### Project 8: Loan Default Prediction
 
+Loans Default, predicting whether the loans that may be defaulted or not. As I am a part of industry that provides loans, it is very important to atleast have 98% of recovery rate. Then only it would consider as a profit which further improves/expands the business. It can be predicted through data sciences because, we have all the information on a customer available and we can build predictive models based on that. 
+
+We are predicting the default rates of a loan as it is a significant part of lending business because lenders must predict whether giving out a loan will result in profit or loss. Normally, loans are profitable because of interest, but sometimes a borrower will default, which will be a loss for business. Thus, it is important that the lender is able to gauge the likelihood of a borrower defaulting before making a loan to him/her.
+
+* Used logistic regression model to identify the relation between variable loanDefault based on the variables interest rate, Fico Score, Annual Income, Unemployment rate during the loan defaulted year, Any disaster during that year.
+* Model predicts that the interest rate and annual income are significant variables that decides the outcome of the loan whether to become a charged off or not. Also the accuracy of the model was 74.45% which implies not a bad model with the data that we have at hand. There are variables like Fico score and Unemployment rate which did not have a significant impact on the model. To conclude Higher the interest and Lower Annual Income would increase the risk of loan getting charged off that could impact the business of a financial institution.
