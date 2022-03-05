@@ -1,1 +1,7 @@
 
+I have used Tableau to present my story about the Airlines and the incidents that happened across the years through visualization for general audience and it was posted as a blog so that every one can knows about the Airbus Type and the fatalities occurred. Additional data that was used for the visualization is Airplane crash data since 1908 and also 2015-2020 Data set which provided us the most recent information. My intention was to make audience aware on the quality of the airbus types that the companies are using and also to be able compare and contrast airline fatality factors looking at the factors regarding the timing trends of the fatality counts per our competing airbus type of plane involved. After selecting a simplistic print friendly blog layout, picking out colors for my visuals per shades of blue for trustworthy good metrics, purples and pink for transitions, dark reds for bad, and selecting photos that support the transitional phases of my story.
+
+By using this blog, I would like to highlight the type of planes that may be mostly involved and therefore assist with identifying the next action steps on whether to take that airbus type for manufacturing or not. Also, based on this they can determine whether any improvements needed or may be decommission those models completely and not allow to travel.
+
+Blog:
+https://airbustypequality.blogspot.com/2021/10/fatalities-based-on-airbus-type.html
